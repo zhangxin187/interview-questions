@@ -43,6 +43,7 @@ function defineComputed(target, key, userDef) {
     sharedPropertyDefinition.set = userDef.set;
   }
   // 利用Object.defineProperty来对计算属性的get和set进行劫持
+  // 后续也可以通过this.[computed]拿到计算属性,属性劫持,拿到的是计算后的值
   Object.defineProperty(target, key, sharedPropertyDefinition);
 }
 

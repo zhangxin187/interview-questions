@@ -97,7 +97,9 @@ function createElm(vnode) {
     vnode.el = document.createElement(tag);
     // 解析虚拟dom属性
     updateProperties(vnode);
+
     // 如果有子节点就递归插入到父节点里面
+    // 递归对子节点创建真实DOM，并插入到父节点中，将VNode树转为真实DOM树
     children.forEach((child) => {
       return vnode.el.appendChild(createElm(child));
     });
@@ -218,7 +220,7 @@ function updateChildren(parent, oldCh, newCh) {
       // 根据老的子节点的key和index的映射表 从新的开始子节点进行查找 如果可以找到就进行移动操作 如果找不到则直接进行插入
       let moveIndex = map[newStartVnode.key];
       if (!moveIndex) {
-        // 老的节点找不到  直接插入
+        // 老的节点找不到  直接插入,最后再删除多余的老节点
         parent.insertBefore(createElm(newStartVnode), oldStartVnode.el);
       } else {
         let moveVnode = oldCh[moveIndex]; //找得到就拿到老的节点
