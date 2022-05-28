@@ -17,6 +17,7 @@ export function mountComponent(vm, el) {
   // vm._update(vm._render());
   // 引入watcher的概念 这里注册一个渲染watcher 执行vm._update(vm._render())方法渲染视图
 
+  // getter方法,访问状态,收集依赖
   let updateComponent = () => {
     // render+patch
     // 整个Watcher都会更新,一个组件对应一个Watcher

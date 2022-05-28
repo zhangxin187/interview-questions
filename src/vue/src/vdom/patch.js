@@ -1,6 +1,6 @@
 // src/vdom/patch.js
 
-// patch用来渲染和更新视图,初次渲染时,oldVnode是el指向的DOM元素，是一个真实DOM, 更新时,opldVnode是一个虚拟节点,旧的虚拟节点
+// patch用来渲染和更新视图,初次渲染时,oldVnode是el指向的DOM元素，是一个真实DOM, 更新时,oldVnode是一个虚拟节点,旧的虚拟节点
 // 返回真实dom
 export function patch(oldVnode, vnode) {
   if (!oldVnode) {

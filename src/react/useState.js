@@ -60,6 +60,11 @@ function useState(initialState) {
   // useState生成hook
   let hook;
 
+  // Mount完毕后,就不会在执行赋初始值initailState的操作了
+  // Mount到update不可逆，除非强制刷新
+  // 如何判断isMount的呢? fiber的双缓存树,首次渲染currentFiber只有rootFiber,
+  // 故判断VNode(组件)对应的currentFiber是否为空即可
+  
   if (isMount) {
     hook = {
       queue: {

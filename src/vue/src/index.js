@@ -23,6 +23,7 @@ initGlobalApi(Vue);
 
 export default Vue;
 
+
 // demo使用
 Vue.mixin({
   created() {

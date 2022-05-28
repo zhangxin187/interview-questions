@@ -13,6 +13,7 @@ const debounce = (fn, delay, immediate) => {
 
     timer = setTimeout(() => {
       // 箭头函数即成上下文this
+      // 绑定this不能忘！
       fn.apply(this, args);
     }, delay);
   };

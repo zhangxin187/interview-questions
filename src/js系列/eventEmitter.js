@@ -1,10 +1,12 @@
 // 手写发布订阅模式 EventEmitter
 class EventEmitter {
   constructor() {
+    // 一个订阅者,可能有多个回调,key value形式,key为type,value为回调数组
     this.events = {};
   }
 
   // 实现订阅,将回调推入数组中去
+  // 根据函数callback来确定具体的订阅者
   on(type, callBack) {
     if (!this.events) this.events = {};
 
@@ -16,6 +18,8 @@ class EventEmitter {
   }
 
   // 删除订阅
+  // 删除具体的某个回调，这里也可以删除整个订阅者
+  // delete this.events.type,不用delete的话,重新构建map即可
   off(type, callBack) {
     if (!this.events[type]) return;
     this.events[type] = this.events[type].filter((item) => {

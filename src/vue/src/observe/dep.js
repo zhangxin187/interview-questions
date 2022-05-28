@@ -11,6 +11,7 @@ export default class Dep {
     if (Dep.target) {
       // Dep.target 是Watcher实例,给Watcher推入当前dep,收集依赖
       // Watcher中addDep会判断dep是否重复,不重复才会收集这个dep,同时dep也会收集这个watcher,这是一个同时的关系,若这个dep在wathcer中重复，那么这个watcher在dep中也是重复的！！！故只需要在Watcher中去重。
+      // 先让watcher收集dep
       Dep.target.addDep(this); // 把自身-dep实例存放在watcher里面
     }
   }

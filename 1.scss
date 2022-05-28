@@ -1,0 +1,35 @@
+html {
+  font-size: 100px;
+}
+
+body {
+  background: #e3e3e3;
+}
+
+.card {
+  width: 7rem;
+  height: 2rem;
+  background-image: url(https://gw.alipayobjects.com/mdn/rms_7527d7/afts/img/A*HD9_S4RyppUAAAAAAAAAAAAAARQnAQ);
+  background-size: 100% auto;
+  background-position: center;
+  margin-bottom: 0.4rem;
+
+  .card-left {
+    .card-left__img {
+      width: 133px;
+      height: 133px;
+    }
+
+    .card-left-title {
+      line-height: 0.36rem;
+      img {
+        height: 0.36rem;
+        width: 0.36rem;
+      }
+      span {
+        font-size: 0.24rem;
+        color: black;
+      }
+    }
+  }
+}
